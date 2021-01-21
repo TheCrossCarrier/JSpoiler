@@ -1,0 +1,27 @@
+/* Don't forget to edit class names (except .spoiler_opened) */
+.block {
+  overflow: hidden;  /* necessary */
+  transition: height 0.5s ease;
+}
+
+.block__spoiler {
+  position: relative;  /* necessary for arrow */
+  width: fit-content;  /* necessary for arrow */
+  cursor: pointer;
+}
+
+.block__spoiler::before {
+  content: "➤";
+  position: absolute;  /* necessary for arrow */
+  right: -1.1em;
+  transform: rotate(180deg);
+  transition: transform 0.5s ease;
+}
+
+.spoiler_opened.block__spoiler::before {
+  transform: rotate(90deg);  /* necessary for arrow */
+}
+
+.block__content {
+  display: none;  /* necessary */
+}
